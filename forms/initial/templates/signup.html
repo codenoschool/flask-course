@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}
+Sign Up
+{% endblock %}
+{% block content %}
+<h1>Sign Up</h1>
+<form method="post" action="{{ url_for('signup') }}">
+	<p><input name="username" type="text"></p>
+	<p><input name="password" type="password"></p>
+	<input type="submit" value="Sign Up">
+</form>
+{% endblock %}
