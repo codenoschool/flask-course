@@ -1,0 +1,24 @@
+{% macro render_input(name, placeholder, type="text") %}
+<p><input name="{{ name }}" type="{{ type }}" placeholder="{{ placeholder }}"></p>
+{% endmacro %}
+
+{% macro render_messages(messages) %}
+{% with messages = get_flashed_messages(category_filter=["success"]) %}
+{% if messages %}
+<ul>
+	{% for message in messages %}
+	<li class="success">{{ message }}</li>
+	{% endfor %}
+</ul>
+{% endif %}
+{% endwith %}
+{% with messages = get_flashed_messages(category_filter=["error"]) %}
+{% if messages %}
+<ul>
+	{% for message in messages %}
+	<li class="error">{{ message }}</li>
+	{% endfor %}
+</ul>
+{% endif %}
+{% endwith %}
+{% endmacro %}
