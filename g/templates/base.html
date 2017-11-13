@@ -1,0 +1,15 @@
+{% from "_render_elements.html" import render_messages %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='imgs/favicon.ico') }}">
+		<link rel="stylesheet" href={{ url_for('static', filename='css/style.css') }}>
+  </head>
+  <body>
+		{{ render_messages(messages) }}
+    {% block content %}
+    {% endblock %}
+  </body>
+</html>
