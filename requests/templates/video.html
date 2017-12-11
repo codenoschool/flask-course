@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Videos</title>
+	</head>
+	<body>
+		<h1>Video</h1>
+		{% if videos %}
+		<p>{{ videos["videos"]["cns"][0]["title"] }}</p>
+		{% else %}
+		<p>There are no videos</p>
+		{% endif %}
+	</body>
+</html>
