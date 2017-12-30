@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}
+My Files
+{% endblock %}
+{% block content %}
+<h1>My Files</h1>
+{% if files %}
+<ul>
+{% for file in files[::-1] %}
+<li><a href="{{ url_for('uploaded_file', filename=file.filename) }}">{{ file.filename }}</a></li>
+{% endfor %}
+</ul>
+{% else %}
+<p>There are no files yet :(</p>
+<p><a href="{{ url_for('home') }}">Let's upload one! ^^</a></p>
+{% endif %}
+{% endblock %}

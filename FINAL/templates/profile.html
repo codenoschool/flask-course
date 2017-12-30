@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}
+{{ user.username|upper }} Profile
+{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-md-4">
+        <div class="card" style="width: 20rem;">
+            <img class="card-img-top" src="{{ picture }}" alt="Card image cap">
+            <div class="card-body">
+                <h1>{{ user.username|upper }}</h1>
+                <h4>About me</h4>
+                {% if user.about_me %}
+                <p>{{ user.about_me|capitalize }}</p>
+                {% else %}
+                <p>Nothing to show us :( 
+                    {% if user.username == g.user %}
+                    <br><a href="{{ url_for('edit_profile') }}">Edit Profile</a>
+                    {% endif %}
+                </p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <h1>Files (10)</h1>
+        {% if files %}
+        <div class="list-group">
+            {% for file in files[::-1] %}
+            <a href="{{ url_for('uploaded_file', filename=file.filename) }}" class="list-group-item list-group-item-action">
+                {{ file.filename}}
+            </a>
+            {% endfor %}
+        </div>
+        {% else %}
+        <p>There are no files yet.</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

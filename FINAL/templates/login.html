@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% from "_render_elements.html" import render_input %}
+{% block title %}
+Log In
+{% endblock %}
+{% block content %}
+<div class="row">
+	<div class="offset-md-3 col-md-6">
+		<h1>Log In</h1>
+		<form method="post" action="{{ url_for('login') }}">
+			{{ render_input("username", "Username") }}
+			{{ render_input("password", "Password", type="password") }}
+			<button type="submit" class="btn btn-primary">Log In</button>
+		</form>
+		<p><a href="{{ url_for('signup') }}">Haven't an account yet? Sign up for FREE!</a></p>
+	</div>
+</div>
+{% endblock %}

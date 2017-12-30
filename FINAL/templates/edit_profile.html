@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}
+Edit Profile
+{% endblock %}
+{% block content %}
+<h1>Settings</h1>
+<h5>Edit Profile</h5>
+<form action="{{ url_for('edit_profile')}}" method="post">
+    <div class="form-group">
+		<label for="about">Tell us about yourself... (máx 280)</label>
+		<textarea name="about" class="form-control" id="about" rows="3">{{ user.about_me }}</textarea>
+	</div>
+	<button type="submit" class="btn btn-primary">Save Changes</button>
+</form>
+{% endblock %}

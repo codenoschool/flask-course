@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}
+Files
+{% endblock %}
+{% block content %}
+<h1>Files</h1>
+{% if files %}
+<dl>
+{% for file in files[::-1] %}
+<dt>Title: <a href="{{ url_for('uploaded_file', filename=file.filename) }}">{{ file.filename }}</a></dt>
+<dd>- Author: <a href="{{ url_for('profile', username=file.owner_username) }}">{{ file.owner_username|lower }}</a></dd>
+{% endfor %}
+</dl>
+{% else %}
+<p>There are no files yet :(</p>
+<p><a href="{{ url_for('home') }}">Let's upload one! ^^</a></p>
+{% endif %}
+{% endblock %}

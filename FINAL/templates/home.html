@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}
+Home
+{% endblock %}
+{% block content %}
+<div class="row">
+	<div class="offset-md-4">
+		<h1>Welcome!</h1>
+		<p>Select your file to upload.<b>*</b></p>
+		<form method="POST" action="{{ url_for('home') }}" enctype="multipart/form-data">
+			<p><input type="file" name="file">
+			<input type="submit" value="Upload"></p>
+		</form>
+		<br>
+		<p>
+			<b>* </b>All the files are public so be careful with your uploads.
+		</p>
+	</div>
+</div>
+{% endblock %}

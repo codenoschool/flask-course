@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}
+Welcome
+{% endblock %}
+{% block content %}
+<div class="row">
+	<div>
+		<h1>ISC & CodeNoSchool!</h1>
+		<p>Always providing you new learnings.</p>
+	</div>
+</div>
+<div class="row">
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Help</h4>
+        <p class="card-text">Do you need more information about this project?</p>
+        <a href="{{ url_for('about') }}" class="btn btn-primary">Check it out!</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Welcome!</h4>
+        <p class="card-text">What are you waiting for? Start now to upload your files!</p>
+        <a href="{{ url_for('home') }}" class="btn btn-primary">Go!</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Account</h4>
+        <p class="card-text">All that you need is an account to share your files! It's free!</p>
+        <a href="{{ url_for('signup') }}" class="btn btn-primary">Sign Up</a>
+		<a href="{{ url_for('login') }}" class="btn btn-primary">Log In</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
