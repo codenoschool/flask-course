@@ -18,7 +18,7 @@ def allowed_file(filename):
     return "." in filename and filename.rsplit(".", 1)[1].lower() in ALLOWED_EXTENSIONS
 
 def get_profile_picture(email):
-    default = "https://goo.gl/k78rhE"
+    default = "https://lh5.googleusercontent.com/fhcUNRdmwXqNpwf4kMHMPbn3y6eOOQnx4UfI3l0OfA308R-tI3e0cg3pFeEhxshDKyXRuZj9s8aHBqrFrmbR=w1366-h635"
     size = 512
 
     gravatar_url = "https://www.gravatar.com/avatar/" + \
