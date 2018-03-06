@@ -73,7 +73,7 @@ def signup():
                         .lower()).first()
             email = Users.query.filter_by(email=request.form["email"].lower()).first()
 
-            if username or username:
+            if username or email:
                 flash("Usernames and emails must be unique.", "alert-warning")
 
                 return redirect(request.url)
